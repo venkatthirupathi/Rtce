@@ -97,14 +97,14 @@ const Login = () => {
                 <h2> To-Do  <span className='highlite'>S </span> </h2>
                 <p>We welcome collaboration and invite you to contribute your ideas and expertise to enhance our project. Your valuable input is highly appreciated as we work together to create something exceptional. Feel free to join us and make a meaningful impact with your contributions.</p>
                 <ul>
-                   <a href="https://github.com/Keerthivardhan1/CodeLive/issues/1"><li>Enable Simultaneous Coding </li></a>
+                   <a href="https://github.com/Keerthivardhan1/CodeLiveProject/issues/1"><li>Enable Simultaneous Coding </li></a>
                     <a href=""><li>Efficient Database Implementation for Storing Individual Team's Code <span className='highlite'>- Done</span> </li></a>
-                   <a href="https://github.com/Keerthivardhan1/CodeLive/issues/2"><li>Enhanced Code Editor: Customizable Theme Selection and UI</li></a> 
-                   <a href="https://github.com/Keerthivardhan1/CodeLive/issues/3"><li>Advanced Speech Recognition Module: Hands-free Coding Experience</li></a> 
-                   <a href="">
+                   <a href="https://github.com/Keerthivardhan1/CodeLiveProject/issues/2"><li>Enhanced Code Editor: Customizable Theme Selection and UI</li></a> 
+                   <a href="https://github.com/Keerthivardhan1/CodeLiveProject/issues/3"><li>Advanced Speech Recognition Module: Hands-free Coding Experience</li></a> 
+                   <a href="https://github.com/Keerthivardhan1/CodeLiveProject/issues/4">
                     <li>Implement Encreption and Decreption Algorithem At Server and Client Side</li>
                    </a>
-                   <a href="https://github.com/Keerthivardhan1/CodeLive"> <li>Contribute To Project</li></a>
+                   <a href="https://github.com/Keerthivardhan1/CodeLiveProject"> <li>Contribute To Project</li></a>
                 </ul>
 
             </section>
