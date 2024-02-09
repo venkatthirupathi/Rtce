@@ -101,7 +101,7 @@ const Editor = ({ socketRef, teamID, onCodeChange, codeRef }) => {
     const provider = new WebsocketProvider(
       // 'wss://demos.yjs.dev/ws', // use the public ws server
       // `ws${location.protocol.slice(4)}//${location.host}/ws`, // alternatively: use the local ws server (run `npm start` in root directory)
-      'ws://localhost:5000',
+      'ws://localhost:3000',
       teamID,
       ydoc
     );
@@ -133,7 +133,7 @@ const Editor = ({ socketRef, teamID, onCodeChange, codeRef }) => {
 
     return () => {
       provider.disconnect();
-      document.body.removeChild(editorContainer);
+      // document.querySelector('.righttt').removeChild(editorContainer);
     };
   }, []);
 
@@ -153,7 +153,7 @@ const Editor = ({ socketRef, teamID, onCodeChange, codeRef }) => {
   },[])
 
   return (
-    <div>
+    <div className='righttt'>
       <button id="y-connect-btn" ref={buttonRef}>Connect</button>
     </div>
   );

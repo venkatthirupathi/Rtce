@@ -125,7 +125,8 @@ const Home = () => {
     }
 
     function handleLook() {
-      isRoomLocked(teamID,true)
+      isRoomLocked.set(teamID,true)
+      console.log("handleLook")
       socketRef.current.emit("look", {teamID,userName : location.state?.userName})
     }
 
