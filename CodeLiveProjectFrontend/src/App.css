@@ -1,10 +1,10 @@
 #root {
-  background: #141414;
+  /* background: #141414; */
   display: flex;
   flex-wrap: wrap;
 }
 .html{
-  background: #141414;
+  /* background: #141414; */
   height: 100%;
 
 }

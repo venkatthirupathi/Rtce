@@ -4,6 +4,7 @@ import Login from './Login'
 import Home from './Home'
 import { Toaster } from 'react-hot-toast'
 import Auth from './pages/Auth'
+import Dashboard from './pages/Dashboard'
 
 function App() {
   return (
@@ -25,6 +26,8 @@ function App() {
         <Route path='/' element = {<Login/>}  />
         <Route path='/Home/:teamID' element={<Home/>} />
         <Route path='/Auth' element={<Auth/>}/>
+        <Route path='/Dashboard' element={<Dashboard/>}/>
+
       </Routes>
       
     </>
