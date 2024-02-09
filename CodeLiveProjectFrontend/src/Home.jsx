@@ -26,6 +26,10 @@ const Home = () => {
 
     const [clients , setClients] = useState([])
 
+    let isRoomLocked = new Map(); // To check whether room is locked or not
+
+    isRoomLocked.set(teamID , false);
+
   
 
 
@@ -58,6 +62,9 @@ const Home = () => {
             if(userName !== location.state?.userName){
               toast.success(`${userName} joined team`)
             }
+            console.log( "un = ",userName)
+            // setClients((prev)=>[...prev , {userName , socket:socketID}] )
+            console.log("clients = ", clients)
             setClients(clients)
             localStorage.setItem("clients" , clients );
           
@@ -117,6 +124,12 @@ const Home = () => {
       .catch((err)=>toast.error("unable to clear the code in databse " ))
     }
 
+    function handleLook() {
+      isRoomLocked.set(teamID,true)
+      console.log("handleLook")
+      socketRef.current.emit("look", {teamID,userName : location.state?.userName})
+    }
+
   if(!location.state){
     return <Navigate to='/'/>
   }
@@ -142,7 +155,8 @@ const Home = () => {
             </div>
 
             <div className='allbtns'>
-              <div className='btn' > 
+              <div className='btn' >
+                <button className='Look The Editor' onClick={handleLook}>Look</button> 
                 <button className=" copyBtn" onClick={CopyTeamID}>Copy Team ID</button>
                 <button className="leave" onClick={handleLeave} >Leave</button></div>
               <div>
