@@ -3,6 +3,7 @@ import {Routes , Route, BrowserRouter} from "react-router-dom"
 import Login from './Login'
 import Home from './Home'
 import { Toaster } from 'react-hot-toast'
+import Auth from './pages/Auth'
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <Routes>
         <Route path='/' element = {<Login/>}  />
         <Route path='/Home/:teamID' element={<Home/>} />
+        <Route path='/Auth' element={<Auth/>}/>
       </Routes>
       
     </>

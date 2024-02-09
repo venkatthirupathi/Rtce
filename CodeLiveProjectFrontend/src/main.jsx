@@ -10,8 +10,8 @@ import { BrowserRouter } from 'react-router-dom'
 ReactDOM.createRoot(document.getElementById('root')).render(
 
   <BrowserRouter>
-  {/* <App /> */}
-   <Landing />
-  <Signup />
+  <App />
+   {/* <Landing />
+  <Signup /> */}
   </BrowserRouter>
 )
