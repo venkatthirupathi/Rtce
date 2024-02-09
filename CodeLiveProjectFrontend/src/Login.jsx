@@ -10,6 +10,8 @@ import twitter from './assets/twitter.svg'
 import hashnode from './assets/hashnode-svgrepo-com.svg'
 import Loginbox from './Components/Loginbox';
 import LoginActual from './LoginActual';
+import CardWithForm from './Components/CardComponent'
+import { Button } from './Components/ui/button';
 
 const Login = () => {
 
@@ -59,7 +61,8 @@ const Login = () => {
             <nav>
                 <img className='logo3' src={logo} alt="" />
                 <h5 >Collaborative Code</h5>
-                <button className='' onClick={handleAuth}>Sign Up</button>
+                {/* <button className='' onClick={handleAuth}>Sign Up</button> */}
+                <Button onClick={handleAuth}>Sign Up</Button>
             </nav>
             
             <span className='main-heading'> <h1>Code With Your Team<span className='highlite'>.</span> Anytime<span className='highlite'>.</span> <br /> Anywhere<span className='highlite'>.</span></h1></span>
@@ -76,7 +79,9 @@ const Login = () => {
             <div className=''>
                 <LoginActual/>
                 </div>
-                <div className=''></div>
+                <div className=''>
+                    
+                </div>
                
             
             </section>
