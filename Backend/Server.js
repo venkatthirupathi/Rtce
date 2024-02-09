@@ -31,7 +31,8 @@ function getAllConnectedClients(teamID) {
 }
 
 io.on('connection', (socket) => {
-
+  
+  console.log(`New connection : ${socket.id}`);
 
   socket.on(ACTIONS.CODE_CHANGE , ({teamID , code})=>{
     socket.in(teamID).emit(ACTIONS.CODE_CHANGE , { teamID,code})
@@ -39,6 +40,7 @@ io.on('connection', (socket) => {
 
 
   socket.on(ACTIONS.JOIN, ({ teamID, userName }) => {
+    console.log(userName ," joined in ",teamID)
     const existingUser = userSocketMap.find(user => user.username === userName);
     if (existingUser) {
       // User with the same username already exists
@@ -73,6 +75,11 @@ io.on('connection', (socket) => {
        socket.leave();
     })
 
+  })
+
+  socket.on('look',({teamID,userName})=>{
+    let targetUserName=userSocketMap.find(user => user.username===userName)
+    socket.to(teamID).emit('roomLooked', { userName });
   })
 })
 
