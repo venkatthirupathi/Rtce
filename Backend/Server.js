@@ -3,9 +3,9 @@ import { createServer } from 'http';
 import { Server } from 'socket.io';
 import ACTIONS from './Actions.js'
 import path from 'path';
-
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
+
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -81,6 +81,12 @@ io.on('connection', (socket) => {
     let targetUserName=userSocketMap.find(user => user.username===userName)
     socket.to(teamID).emit('roomLooked', { userName });
   })
+
+  socket.on('chat', ({teamID, inputMessage}) => {
+    console.log('mess',teamID, inputMessage );
+    socket.to(teamID).emit('message', inputMessage);
+  })
+  
 })
 
 

@@ -47,7 +47,7 @@ const Login = () => {
     }
 
     const handleAuth = ()=>{
-        navigate('/Auth')
+        navigate('/Login')
     }
 
   return (
@@ -57,7 +57,7 @@ const Login = () => {
             <nav>
                 <img className='logo3' src={logo} alt="" />
                 <h5 >Collaborative Code</h5>
-                <button className='' onClick={handleAuth}>Sign Up</button>
+                <button className='' onClick={handleAuth}>Login</button>
             </nav>
             
             <span className='main-heading'> <h1>Code With Your Team<span className='highlite'>.</span> Anytime<span className='highlite'>.</span> <br /> Anywhere<span className='highlite'>.</span></h1></span>
