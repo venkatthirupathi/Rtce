@@ -9,6 +9,8 @@ import { toast } from 'react-hot-toast'
 import logo from './assets/logo.svg'
 import { database } from './firebase';
 import { Button } from './Components/ui/button'
+import { motion } from "framer-motion"
+import { Skeleton } from "@/components/ui/skeleton"
 
 const Home = () => {
 
@@ -139,7 +141,7 @@ const Home = () => {
 
   return (
     <>
-    <div className="Home">
+    <motion.div className="Home"  animate={{opacity:1}} initial={{opacity:0}} exit={{opacity:0}}>
         <div className="left">
           <div className="asideInner flex flex-col justify-between items-center">
             <div>
@@ -181,6 +183,7 @@ const Home = () => {
         </div>
 
         <div className="right">
+           <Skeleton className="h-[125px] w-[250px] rounded-xl" />
             <Editor 
             socketRef = {socketRef} 
             teamID = {teamID}  
@@ -188,7 +191,7 @@ const Home = () => {
             codeRef = {codeRef}
             />
         </div>
-    </div>
+    </motion.div>
     </>
   )
 }

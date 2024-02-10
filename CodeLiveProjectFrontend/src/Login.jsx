@@ -12,6 +12,7 @@ import Loginbox from './Components/Loginbox';
 import LoginActual from './LoginActual';
 import CardWithForm from './Components/CardComponent'
 import { Button } from './Components/ui/button';
+import { motion } from "framer-motion"
 
 const Login = () => {
 
@@ -56,7 +57,7 @@ const Login = () => {
 
   return (
     <>  
-        <div className='login-page'>
+        <motion.div className='login-page' exit={{opacity:0}}>
 
             <nav>
                 <img className='logo3' src={logo} alt="" />
@@ -89,7 +90,7 @@ const Login = () => {
             <section>
                      
             <div className='leftContent'>
-                <h1> Let<span className='highlite' >'</span>s <span className='highlite' >Code</span> <br /> Togeather</h1>
+                <h1> Let<span className='highlite' >'</span>s <span className='highlite' >Code</span> <br /> Together</h1>
             </div>
 
             <div className='loginboxwrapper'>
@@ -151,7 +152,7 @@ const Login = () => {
                 <center className='highlite'><h3>KEERTHI VARDHAN <br /></h3>keerthivardhantekulapelli@gmial.com</center>
                 
             </footer>       
-        </div>
+        </motion.div>
 
     </>
   )
