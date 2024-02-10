@@ -14,8 +14,6 @@ const Signup = () => {
     e.preventDefault();
     try {
       const userCredential = await createUserWithEmailAndPassword(getAuth(app), email, password);
-      console.log("user created" + userCredential)
-      navigate('/Login')
       await database.ref(`users/${userCredential.user.uid}`).set({ username });
       
     } catch (error) {

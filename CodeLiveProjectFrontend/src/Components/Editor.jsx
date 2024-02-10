@@ -84,7 +84,6 @@
 // };
 
 // export default Editor;
-
 import React, { useEffect, useRef } from 'react';
 import CodeMirror from 'codemirror';
 import * as Y from 'yjs';
@@ -93,14 +92,11 @@ import { CodemirrorBinding } from 'y-codemirror';
 import 'codemirror/mode/javascript/javascript.js';
 
 const Editor = ({ socketRef, teamID, onCodeChange, codeRef }) => {
-  const buttonRef = useRef(null);
-  // const editorRef = useRef(null);
-  const editor= useRef(null);
+  const editor = useRef(null);
+  
   useEffect(() => {
     const ydoc = new Y.Doc();
     const provider = new WebsocketProvider(
-      // 'wss://demos.yjs.dev/ws', // use the public ws server
-      // `ws${location.protocol.slice(4)}//${location.host}/ws`, // alternatively: use the local ws server (run `npm start` in root directory)
       'ws://localhost:3000',
       teamID,
       ydoc
@@ -108,54 +104,36 @@ const Editor = ({ socketRef, teamID, onCodeChange, codeRef }) => {
     const ytext = ydoc.getText('codemirror');
     const editorContainer = document.createElement('div');
     editorContainer.setAttribute('id', 'editor');
-    console.log("ec",editorContainer)
-    // document.body.insertBefore(editorContainer, null);
-    buttonRef.current.parentNode.insertBefore(editorContainer, buttonRef.current.nextSibling);
 
+    // Append the editor container to its parent element
+    document.querySelector('.righttt').appendChild(editorContainer);
 
-     editor.current = CodeMirror(editorContainer, {
+    editor.current = CodeMirror(editorContainer, {
       mode: 'javascript',
       lineNumbers: true
     });
 
     const binding = new CodemirrorBinding(ytext, editor.current, provider.awareness);
 
-    const connectBtn = document.getElementById('y-connect-btn');
-    connectBtn.addEventListener('click', () => {
-      if (provider.shouldConnect) {
-        provider.disconnect();
-        connectBtn.textContent = 'Connect';
-      } else {
-        provider.connect();
-        connectBtn.textContent = 'Disconnect';
-      }
-    });
-
     return () => {
       provider.disconnect();
-      // document.querySelector('.righttt').removeChild(editorContainer);
     };
   }, []);
 
-  useEffect(()=>{
-    // eslint-disable-next-line react/prop-types
-    if(socketRef.current != null){
-      // eslint-disable-next-line react/prop-types
-      
-      // eslint-disable-next-line react/prop-types
+  useEffect(() => {
+    if (socketRef.current != null) {
       socketRef.current.on('roomLooked', ({ userName }) => {
         // Disable editing of the editor
-        alert("Room is locked by another user")
+        console.log("room lock request ")
+        alert("Room is locked by another user");
         editor.current.setOption('readOnly', true);
+        
       });
-
     }
-  },[])
+  }, []);
 
   return (
-    <div className='righttt'>
-      <button id="y-connect-btn" ref={buttonRef}>Connect</button>
-    </div>
+    <div className='righttt'></div>
   );
 };
 

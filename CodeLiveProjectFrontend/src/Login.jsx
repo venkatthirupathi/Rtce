@@ -8,6 +8,10 @@ import git from './assets/git.svg'
 import linkedin from './assets/linkedin.svg'
 import twitter from './assets/twitter.svg'
 import hashnode from './assets/hashnode-svgrepo-com.svg'
+import Loginbox from './Components/Loginbox';
+import LoginActual from './LoginActual';
+import CardWithForm from './Components/CardComponent'
+import { Button } from './Components/ui/button';
 
 const Login = () => {
 
@@ -57,7 +61,8 @@ const Login = () => {
             <nav>
                 <img className='logo3' src={logo} alt="" />
                 <h5 >Collaborative Code</h5>
-                <button className='' onClick={handleAuth}>Login</button>
+                {/* <button className='' onClick={handleAuth}>Sign Up</button> */}
+                <Button onClick={handleAuth}>Sign Up</Button>
             </nav>
             
             <span className='main-heading'> <h1>Code With Your Team<span className='highlite'>.</span> Anytime<span className='highlite'>.</span> <br /> Anywhere<span className='highlite'>.</span></h1></span>
@@ -70,6 +75,17 @@ const Login = () => {
                 </div>
             </div>
 
+            <section className='mb-14 flex'>
+            <div className=''>
+                <LoginActual/>
+                </div>
+                <div className=''>
+                    
+                </div>
+               
+            
+            </section>
+
             <section>
                      
             <div className='leftContent'>
@@ -78,7 +94,7 @@ const Login = () => {
 
             <div className='loginboxwrapper'>
            
-            <div className="login-box"> 
+            {/* <div className="login-box"> 
                 <form  onSubmit={handelSubmit} action="" method="get" >
                     <div className=" user-box">
                     <input type="text" name="teamID" required="" value={teamID } onKeyUp={handleEnter} onChange={(e)=>setTeamID(e.target.value)}/>
@@ -92,7 +108,9 @@ const Login = () => {
                     </center>
                     <span>If your are the Team Lead , <a onClick={createNewTeam} href="" className='aInP'>Create Team ID</a></span>
                 </form>
-            </div>  
+            </div>   */}
+            <Loginbox/>
+            {/* <LoginActual/> */}
          </div>  
 
 

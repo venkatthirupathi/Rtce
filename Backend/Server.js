@@ -78,8 +78,10 @@ io.on('connection', (socket) => {
   })
 
   socket.on('look',({teamID,userName})=>{
+    console.log("looking came with ", teamID, userName)
     let targetUserName=userSocketMap.find(user => user.username===userName)
-    socket.to(teamID).emit('roomLooked', { userName });
+    socket.in(teamID).emit('roomLooked', { userName });
+
   })
 
   socket.on('chat', ({teamID, inputMessage}) => {

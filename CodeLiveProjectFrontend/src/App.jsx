@@ -4,8 +4,7 @@ import Login from './Login'
 import Home from './Home'
 import { Toaster } from 'react-hot-toast'
 import Auth from './pages/Auth'
-import Landing from './Landing'
-import Signup from './SignUp'
+import Dashboard from './pages/Dashboard'
 
 function App() {
   return (
@@ -26,8 +25,9 @@ function App() {
       <Routes>
         <Route path='/' element = {<Login/>}  />
         <Route path='/Home/:teamID' element={<Home/>} />
-        <Route path='/Login' element={<Landing/>}/>
-        <Route path='/SignUp/' element={<Signup />} />
+        <Route path='/Auth' element={<Auth/>}/>
+        <Route path='/Dashboard' element={<Dashboard/>}/>
+
       </Routes>
       
     </>

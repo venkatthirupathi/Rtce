@@ -9,6 +9,7 @@ import { Navigate, useLocation  , useNavigate , useParams} from 'react-router-do
 import { toast } from 'react-hot-toast'
 import logo from './assets/logo.svg'
 import { database } from './firebase';
+import { Button } from './Components/ui/button'
 
 const Home = () => {
 
@@ -80,6 +81,8 @@ const Home = () => {
           }
         })
 
+        
+
 
       
       }
@@ -139,7 +142,8 @@ const Home = () => {
     <>
     <div className="Home">
         <div className="left">
-          <div className="asideInner">
+          <div className="asideInner flex flex-col justify-between items-center">
+            <div>
             <div className='left-heading lh' >
               <img className="logo3 " src={logo} alt="" />
               <h3 className=''>Collaborative Code</h3>
@@ -154,14 +158,20 @@ const Home = () => {
                   ))}
                   
             </div>
+            </div>
 
-            <div className='allbtns'>
-              <div className='btn' >
+            <div className='allbtns '>
+              <div className='btn flex-col gap-2' >
+            
+                <div className='flex gap-[3rem] items-center'>
                 <button className='Look The Editor' onClick={handleLook}>Look</button> 
-                <button className=" copyBtn" onClick={CopyTeamID}>Copy Team ID</button>
-                <button className="leave" onClick={handleLeave} >Leave</button></div>
-              <div>
-                <button onClick={clearStorage}>Clear Code From Database</button>
+                <Button className=" copyBtn" variant="outline" onClick={CopyTeamID}>Copy Team ID</Button>
+                </div>
+              <div className='flex gap-[3rem] items-center' >
+                <Button className="leave" onClick={handleLeave} >Leave</Button>
+                <button onClick={clearStorage}>Clear Database</button>
+
+                </div>
               </div>
 
             </div>
