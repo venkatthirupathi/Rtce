@@ -17,18 +17,19 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
 // 
-const handleSubmit = (e) => {
-  e.preventDefault();
-  signInWithEmailAndPassword(getAuth(app), email, password).then((userCredential) => {
-      console.log(userCredential)
-  }).catch((e)=>confirm(e + "false"))
-  localStorage.setItem('email', email);
-  }
 const Landing = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const navigate = useNavigate()
+
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    signInWithEmailAndPassword(getAuth(app), email, password).then((userCredential) => {
+        console.log(userCredential)
+    }).catch((e)=>confirm(e + "false"))
+    localStorage.setItem('email',email);
+  }
 
   // const handleSubmit = async (e) => {
   //   e.preventDefault();
@@ -107,5 +108,15 @@ const Landing = () => {
     </div>
   )
 }
+
+// const Home = () => {
+//   const email = localStorage.getItem('email');
+//   return (
+//     <div>
+//       <h1>Welcome, {email}!</h1>
+//       <Tile title="Education" description="Teach And Show Examples At Same Time"/>
+//     </div>
+//   )
+// }
 
 export default Landing;
