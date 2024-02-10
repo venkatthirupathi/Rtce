@@ -1,6 +1,4 @@
 import { useState } from 'react';
-// import Cookies from 'js-cookie'
-// import Tile from './Components/Tile';
 import {app} from './firebase';
 import {useNavigate} from 'react-router-dom'
 import {getAuth, signInWithEmailAndPassword} from 'firebase/auth'
@@ -19,17 +17,19 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
 // 
-const handleSubmit = (e) => {
-  e.preventDefault();
-  signInWithEmailAndPassword(getAuth(app), email, password).then((userCredential) => {
-      console.log(userCredential)
-  }).catch((e)=>confirm(e + "false"))
-  localStorage.setItem('email', email);
-  }
 const Landing = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    signInWithEmailAndPassword(getAuth(app), email, password).then((userCredential) => {
+        console.log(userCredential)
+    }).catch((e)=>confirm(e + "false"))
+    localStorage.setItem('email',email);
+  }
 
   // const handleSubmit = async (e) => {
   //   e.preventDefault();

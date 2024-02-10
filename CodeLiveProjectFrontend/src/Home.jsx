@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import "./index.css"
 import Client from './Components/Client'
 import Editor from './Components/Editor'
+import ChatArea from './Components/Chat'
 import { initSocket } from './socket'
 import ACTIONS from './Actions'
 import { Navigate, useLocation  , useNavigate , useParams} from 'react-router-dom'
@@ -180,13 +181,18 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="right">
-            <Editor 
-            socketRef = {socketRef} 
-            teamID = {teamID}  
-            onCodeChange = { handlecodechange }
-            codeRef = {codeRef}
-            />
+        <div className="middle">
+          <Editor 
+          socketRef = {socketRef} 
+          teamID = {teamID}  
+          onCodeChange = { handlecodechange }
+          codeRef = {codeRef}
+          />
+        </div>
+        <div className='right'>
+          <ChatArea 
+          socketRef = {socketRef} 
+          teamID = {teamID}/>
         </div>
     </div>
     </>

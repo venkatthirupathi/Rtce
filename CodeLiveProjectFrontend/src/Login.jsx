@@ -51,7 +51,7 @@ const Login = () => {
     }
 
     const handleAuth = ()=>{
-        navigate('/Auth')
+        navigate('/Login')
     }
 
   return (
