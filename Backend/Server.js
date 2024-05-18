@@ -3,21 +3,21 @@ import { createServer } from 'http';
 import { Server } from 'socket.io';
 import ACTIONS from './Actions.js'
 import path from 'path';
-
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = dirname(__filename);
 
 const app = express();
 const server = createServer(app);
 const io = new Server(server);
 
-app.use(express.static('dist'))
-app.use((req ,res , next)=>{
-  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
-})
+// app.use(express.static('dist'))
+// app.use((req ,res , next)=>{
+//   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+// })
 
 const userSocketMap = [];
 
@@ -83,6 +83,18 @@ io.on('connection', (socket) => {
     socket.in(teamID).emit('roomLooked', { userName });
 
   })
+
+  socket.on('chat', ({teamID, inputMessage}) => {
+    console.log('mess',teamID, inputMessage );
+    socket.to(teamID).emit('message', inputMessage);
+  })
+  
+})
+
+
+app.get('/users/:teamId' , (req , res) =>{
+  console.log("team id = " , req.params.teamID)
+  res.send(JSON.stringify(getAllConnectedClients(req.params.teamID)))
 })
 
 

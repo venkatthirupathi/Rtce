@@ -1,6 +1,4 @@
 import { useState } from 'react';
-// import Cookies from 'js-cookie'
-// import Tile from './Components/Tile';
 import {app} from './firebase';
 import {useNavigate} from 'react-router-dom'
 import {getAuth, signInWithEmailAndPassword} from 'firebase/auth'
@@ -19,17 +17,19 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
 // 
-const handleSubmit = (e) => {
-  e.preventDefault();
-  signInWithEmailAndPassword(getAuth(app), email, password).then((userCredential) => {
-      console.log(userCredential)
-  }).catch((e)=>confirm(e + "false"))
-  localStorage.setItem('email', email);
-  }
 const Landing = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    signInWithEmailAndPassword(getAuth(app), email, password).then((userCredential) => {
+        console.log(userCredential)
+    }).catch((e)=>confirm(e + "false"))
+    localStorage.setItem('email',email);
+  }
 
   // const handleSubmit = async (e) => {
   //   e.preventDefault();
@@ -48,7 +48,7 @@ const Landing = () => {
   //       console.log(userCredential)
   //   }).catch((e)=>confirm(e + "false"))
   //   localStorage.setItem('email', email);
-  
+
   return (
     // <form onSubmit={handleSubmit}>
     //   <label>
@@ -77,18 +77,6 @@ const Landing = () => {
               <Input id="name" placeholder="Your Name" value={username} onChange={(e) => setUsername(e.target.value)} />
             </div>
             <div className="flex flex-col space-y-1.5">
-              {/* <Label htmlFor="framework">Framework</Label>
-              <Select>
-                <SelectTrigger id="framework">
-                  <SelectValue placeholder="Select" />
-                </SelectTrigger>
-                <SelectContent position="popper">
-                  <SelectItem value="next">Next.js</SelectItem>
-                  <SelectItem value="sveltekit">SvelteKit</SelectItem>
-                  <SelectItem value="astro">Astro</SelectItem>
-                  <SelectItem value="nuxt">Nuxt.js</SelectItem>
-                </SelectContent>
-              </Select> */}
               <Label htmlFor="email">Email</Label>
               <Input id="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}/>
               <Label htmlFor="">Password</Label>

@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import "./index.css"
 import Client from './Components/Client'
 import Editor from './Components/Editor'
+import ChatArea from './Components/Chat'
 import { initSocket } from './socket'
 import ACTIONS from './Actions'
 import { Navigate, useLocation  , useNavigate , useParams} from 'react-router-dom'
@@ -165,7 +166,7 @@ const Home = () => {
               <div className='btn flex-col gap-2' >
             
                 <div className='flex gap-[3rem] items-center'>
-                <button className='Look The Editor' onClick={handleLook}>Look</button> 
+                <button className='Look The Editor' onClick={handleLook}>Lock</button> 
                 <Button className=" copyBtn" variant="outline" onClick={CopyTeamID}>Copy Team ID</Button>
                 </div>
               <div className='flex gap-[3rem] items-center' >
@@ -182,14 +183,18 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="right">
-           <Skeleton className="h-[125px] w-[250px] rounded-xl" />
-            <Editor 
-            socketRef = {socketRef} 
-            teamID = {teamID}  
-            onCodeChange = { handlecodechange }
-            codeRef = {codeRef}
-            />
+        <div className="middle">
+          <Editor 
+          socketRef = {socketRef} 
+          teamID = {teamID}  
+          onCodeChange = { handlecodechange }
+          codeRef = {codeRef}
+          />
+        </div>
+        <div className='right'>
+          <ChatArea 
+          socketRef = {socketRef} 
+          teamID = {teamID}/>
         </div>
     </motion.div>
     </>

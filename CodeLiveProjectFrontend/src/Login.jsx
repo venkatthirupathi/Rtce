@@ -52,7 +52,7 @@ const Login = () => {
     }
 
     const handleAuth = ()=>{
-        navigate('/Auth')
+        navigate('/Login')
     }
 
   return (
@@ -76,9 +76,11 @@ const Login = () => {
                 </div>
             </div>
 
+            <p>Currently SignUp, Lock, And Chat Features are partially implemented ...</p>
+
             <section className='mb-14 flex'>
             <div className=''>
-                <LoginActual/>
+                {/* <LoginActual/> */}
                 </div>
                 <div className=''>
                     

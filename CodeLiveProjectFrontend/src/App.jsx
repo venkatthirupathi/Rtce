@@ -5,6 +5,7 @@ import Home from './Home'
 import { Toaster } from 'react-hot-toast'
 import Auth from './pages/Auth'
 import Dashboard from './pages/Dashboard'
+// import ParticleWrapper  from './Components/Particales'
 
 function App() {
   return (
@@ -29,7 +30,7 @@ function App() {
         <Route path='/Dashboard' element={<Dashboard/>}/>
 
       </Routes>
-      
+      {/* <ParticleWrapper/> */}
     </>
   )
 }
