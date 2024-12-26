@@ -771,7 +771,14 @@ h5{
  h5:hover{
   color: #facc15;
 }
+.coder{
+  text-align: center;
+  justify-content: center;
+  top:0;
+  left: 0%;
+  color: #facc15;
 
+}
 
 .logo3{
   width: 1.9rem;

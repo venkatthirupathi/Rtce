@@ -166,12 +166,12 @@ const Home = () => {
               <div className='btn flex-col gap-2' >
             
                 <div className='flex gap-[3rem] items-center'>
-                <button className='Look The Editor' onClick={handleLook}>Lock</button> 
+                {/* <button className='Look The Editor' onClick={handleLook}>Lock</button>  */}
                 <Button className=" copyBtn" variant="outline" onClick={CopyTeamID}>Copy Team ID</Button>
                 </div>
               <div className='flex gap-[3rem] items-center' >
                 <Button className="leave" onClick={handleLeave} >Leave</Button>
-                <button onClick={clearStorage}>Clear Database</button>
+                {/* <button onClick={clearStorage}>Clear Database</button> */}
 
                 </div>
               </div>

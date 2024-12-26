@@ -61,9 +61,9 @@ const Login = () => {
 
             <nav>
                 <img className='logo3' src={logo} alt="" />
-                <h5 >Collaborative Code</h5>
+                <h1 className='coder'>Real Time Code Editor</h1>
                 {/* <button className='' onClick={handleAuth}>Sign Up</button> */}
-                <Button onClick={handleAuth}>Sign Up</Button>
+                {/* <Button onClick={handleAuth}>Sign Up</Button> */}
             </nav>
             
             <span className='main-heading'> <h1>Code With Your Team<span className='highlite'>.</span> Anytime<span className='highlite'>.</span> <br /> Anywhere<span className='highlite'>.</span></h1></span>
@@ -76,7 +76,7 @@ const Login = () => {
                 </div>
             </div>
 
-            <p>Currently SignUp, Lock, And Chat Features are partially implemented ...</p>
+            {/* <p>Currently SignUp, Lock, And Chat Features are partially implemented ...</p> */}
 
             <section className='mb-14 flex'>
             <div className=''>
@@ -123,14 +123,14 @@ const Login = () => {
                 <h2> To-Do  <span className='highlite'>S </span> </h2>
                 <p>We welcome collaboration and invite you to contribute your ideas and expertise to enhance our project. Your valuable input is highly appreciated as we work together to create something exceptional. Feel free to join us and make a meaningful impact with your contributions.</p>
                 <ul>
-                   <a href="https://github.com/Keerthivardhan1/CodeLiveProject/issues/1"><li>Enable Simultaneous Coding </li></a>
+                   <a href="https://github.com/venkatthirupathi/Rtce/issues/1"><li>Enable Simultaneous Coding </li></a>
                     <a href=""><li>Efficient Database Implementation for Storing Individual Team's Code <span className='highlite'>- Done</span> </li></a>
-                   <a href="https://github.com/Keerthivardhan1/CodeLiveProject/issues/2"><li>Enhanced Code Editor: Customizable Theme Selection and UI</li></a> 
-                   <a href="https://github.com/Keerthivardhan1/CodeLiveProject/issues/3"><li>Advanced Speech Recognition Module: Hands-free Coding Experience</li></a> 
-                   <a href="https://github.com/Keerthivardhan1/CodeLiveProject/issues/4">
+                   <a href="https://github.com/venkatthirupathi/Rtce/issues/2"><li>Enhanced Code Editor: Customizable Theme Selection and UI</li></a> 
+                   <a href="https://github.com/venkatthirupathi/Rtce/issues/3"><li>Advanced Speech Recognition Module: Hands-free Coding Experience</li></a> 
+                   <a href="https://github.com/venkatthirupathi/Rtce/issues/4">
                     <li>Implement Encreption and Decreption Algorithem At Server and Client Side</li>
                    </a>
-                   <a href="https://github.com/Keerthivardhan1/CodeLiveProject"> <li>Contribute To Project</li></a>
+                   <a href="https://github.com/venkatthirupathi/Rtce.git"> <li>Contribute To Project</li></a>
                 </ul>
 
             </section>
@@ -138,20 +138,20 @@ const Login = () => {
 
             <footer>
                 <ul>
-                    <a href="https://github.com/Keerthivardhan1">
+                    <a href="https://github.com/venkatthirupathi">
                         <img src={git} alt=""  className="social-icon"/>
                     </a>
-                    <a href="https://www.linkedin.com/in/keerthi-vardhan-tekulapelli-7064a6245/">
+                    <a href="https://www.linkedin.com/in/thirupathi-venkat-8900102a6/">
                         <img src={linkedin} alt="" className="social-icon"/>
                     </a>
-                    <a href="https://hashnode.com/@keerthivardhan">
+                    <a href="hhttps://hashnode.com/@venkat123">
                         <img src={hashnode} alt="" className="social-icon"/>
                     </a>
-                    <a href="https://twitter.com/vardhan132003">
+                    <a href="https://x.com/T_VENKAT_2005">
                         <img src={twitter} alt="" className="social-icon"/>
                     </a>
                 </ul>
-                <center className='highlite'><h3>KEERTHI VARDHAN <br /></h3>keerthivardhantekulapelli@gmial.com</center>
+                <center className='highlite'><h3>Thirupathi Venkat<br /></h3>thirupathivenkat2005@gmail.com</center>
                 
             </footer>       
         </motion.div>
